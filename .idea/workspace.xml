@@ -7,9 +7,6 @@
     <list default="true" id="bf773b37-b931-479c-9280-e77f31e0d4af" name="Changes" comment="init commit with lombok e commons">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/vm93/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/vm93/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/vm93/biblioteca/Libro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/vm93/biblioteca/Libro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/vm93/biblioteca/Pubblicazione.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/vm93/biblioteca/Pubblicazione.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/vm93/biblioteca/Rivista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/vm93/biblioteca/Rivista.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +56,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "E:/Corso EPICode/BackEnd WSs/ExW2L4",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
@@ -88,6 +86,16 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="init commit with lombok e commons" />
     <option name="LAST_COMMIT_MESSAGE" value="init commit with lombok e commons" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint type="java-exception">
+          <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
