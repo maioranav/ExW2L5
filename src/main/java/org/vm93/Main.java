@@ -18,11 +18,7 @@ public class Main {
 
     private static List<Pubblicazione> libreria = new ArrayList<>();
 
-    public static void main(String[] args) throws FileNotFoundException {
-        //  libreria.add(new Libro((long) 125498515, "Il passante", 2020, (short) 12, "Vincenzo", "Horror"));
-        //  libreria.add(new Rivista((long) 1456196196, "Gesu è risorto", 2023, (short) 32, Periodic.SETTIMANALE));
-        //  System.out.println(libreria.toString());
-
+    public static void main(String[] args) {
         System.out.println("\n** BIBLIOTECA DI VINCENZO **");
 
         while (true) {
