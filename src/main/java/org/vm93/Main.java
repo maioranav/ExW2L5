@@ -80,7 +80,7 @@ public class Main {
                 case 5 -> {
                     System.out.println("\n\t >> MOSTRO TUTTI I LIBRI IN LIBRERIA");
                     libreria.stream().forEach(el -> System.out.println(el.toString()));
-                    System.out.println("Totale libri diponibile: " + libreria.size() + "\n");
+                    System.out.println("\t> Totale pubblicazioni diponibili: " + libreria.size() + "\n");
                 }
                 case 6 -> {
                     System.out.println("\n\tBACKUP E RIPRISTINO\n\t 1-SALVA\t2-RIPRISTINA");
