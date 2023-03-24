@@ -58,6 +58,14 @@ public class Main {
                     libreria.stream().filter(n -> n.getYear() == anno).forEach(el -> System.out.println(el.toString()));
                     System.out.print("\n");
                 }
+                case 4 -> {
+                    System.out.print("\n\t >> RICERCA PER AUTORE: ");
+                    scan.nextLine();
+                    String autore = scan.nextLine();
+                    System.out.print("\n");
+                    libreria.stream().filter(n -> n instanceof Libro).filter(libro -> ((Libro) libro).getAuthor().toLowerCase().contains(autore.toLowerCase())).forEach(el -> System.out.println(el.toString()));
+                    System.out.print("\n");
+                }
                 case 5 -> {
                     System.out.println("\n\t >> MOSTRO TUTTI I LIBRI IN LIBRERIA");
                     System.out.println(libreria.toString());
