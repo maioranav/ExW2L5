@@ -8,6 +8,7 @@ import org.vm93.biblioteca.Rivista;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -128,37 +129,39 @@ public class Main {
 
         try {
             // Crea un oggetto BufferedReader per leggere il file
-            FileInputStream fis = new FileInputStream("input.txt");
-            InputStreamReader isr = new InputStreamReader(fis, "UTF-8");
-            BufferedReader br = new BufferedReader(isr);
+            File file = new File(filename);
+            String input = FileUtils.readFileToString(file, "UTF-8");
+            input = input.substring(1, input.length() - 1).replaceAll("}, ", "}; ");
 
-            // Legge la prima riga del file
-            String input = br.readLine().substring(1);// Legge la riga iniziale "["
 
-            // Legge gli oggetti dal file e li aggiunge all'ArrayList
-            String[] oggetti = input.split(", "); // Divide la stringa in un array di oggetti
-            for (String oggetto : oggetti) {
-                if (oggetto.startsWith("Libro")) {
-                    String[] attributi = oggetto.substring(7, oggetto.length() - 1).split(", "); // Divide la stringa in un array di attributi
-                    String author = attributi[0].substring(8);
-                    String title = attributi[1].substring(7);
-                    int year = Integer.parseInt(attributi[2].substring(5));
-                    String genre = attributi[3].substring(6);
-                    short pages = Short.parseShort(attributi[4].substring(6));
-                    long isbn = Long.parseLong(attributi[5].substring(6));
-                    libreria.add(new Libro(isbn, title, year, pages, author, genre));
-                } else if (oggetto.startsWith("Rivista")) {
-                    String[] attributi = oggetto.substring(9, oggetto.length() - 1).split(", "); // Divide la stringa in un array di attributi
-                    String title = attributi[0].substring(7);
-                    Periodic periods = Periodic.valueOf(attributi[1].substring(8));
-                    int year = Integer.parseInt(attributi[2].substring(5));
-                    short pages = Short.parseShort(attributi[3].substring(6));
-                    long isbn = Long.parseLong(attributi[4].substring(6));
-                    libreria.add(new Rivista(isbn, title, year, pages, periods));
+            //MANIPOLO IL FILE
+            String[] items = input.split("; ");
+
+            for (String item : items) {
+                String[] attributes = item.split("\\{")[1].split("\\}")[0].split(", ");
+                String type = item.split("\\{")[0];
+                switch (type) {
+                    case "Libro":
+                        String author = attributes[0].split("=")[1].replaceAll("'", "");
+                        String title = attributes[1].split("=")[1].replaceAll("'", "");
+                        int year = Integer.parseInt(attributes[2].split("=")[1].replaceAll("'", ""));
+                        String genre = attributes[3].split("=")[1].replaceAll("'", "");
+                        short pages = Short.parseShort(attributes[4].split("=")[1].replaceAll("'", ""));
+                        long isbn = Long.parseLong(attributes[5].split("=")[1].replaceAll("'", ""));
+                        libreria.add(new Libro(isbn, title, year, pages, author, genre));
+                        break;
+                    case "Rivista":
+                        title = attributes[0].split("=")[1].replaceAll("'", "");
+                        Periodic periods = Periodic.valueOf(attributes[1].split("=")[1].replaceAll("'", ""));
+                        year = Integer.parseInt(attributes[2].split("=")[1].replaceAll("'", ""));
+                        pages = Short.parseShort(attributes[3].split("=")[1].replaceAll("'", ""));
+                        isbn = Long.parseLong(attributes[4].split("=")[1].replaceAll("'", ""));
+                        libreria.add(new Rivista(isbn, title, year, pages, periods));
+                        break;
+                    default:
+                        System.out.println("Tipo non supportato");
                 }
             }
-
-            br.close();
 
         } catch (FileNotFoundException e) {
             System.out.println("File non trovato!");
