@@ -1,1 +1,0 @@
-[Libro{author='Vincenzo', title='Il passante', year='2020', genre='Horror', pages='12', isbn='125498515'}, Rivista{title='Gesu è risorto', periods='SETTIMANALE', year='2023', pages='32', isbn='1456196196'}]
