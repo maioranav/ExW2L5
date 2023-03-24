@@ -50,6 +50,14 @@ public class Main {
                         }
                     }
                 }
+                case 3 -> {
+                    System.out.print("\n\t >> RICERCA PER ANNO: ");
+                    int anno = scan.nextInt();
+                    scan.nextLine();
+                    System.out.print("\n");
+                    libreria.stream().filter(n -> n.getYear() == anno).forEach(el -> System.out.println(el.toString()));
+                    System.out.print("\n");
+                }
                 case 5 -> {
                     System.out.println("\n\t >> MOSTRO TUTTI I LIBRI IN LIBRERIA");
                     System.out.println(libreria.toString());
