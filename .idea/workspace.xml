@@ -5,12 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf773b37-b931-479c-9280-e77f31e0d4af" name="Changes" comment="init commit with lombok e commons">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/vm93/biblioteca/Libro.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/vm93/biblioteca/Periodic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/vm93/biblioteca/PubbType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/vm93/biblioteca/Pubblicazione.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/vm93/biblioteca/Rivista.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/vm93/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/vm93/Main.java" afterDir="false" />
     </list>
