@@ -18,7 +18,7 @@ public class Main {
 
     private static List<Pubblicazione> libreria = new ArrayList<>();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         System.out.println("\n** BIBLIOTECA DI VINCENZO **");
 
         while (true) {
@@ -164,8 +164,14 @@ public class Main {
             System.out.println("File non trovato!");
         } catch (IOException e) {
             throw new RuntimeException(e);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
 
+    }
+
+    public static boolean checkIsbn(long isbn) {
+        return libreria.stream().anyMatch(n -> n.getIsbn() == isbn);
     }
 
 }

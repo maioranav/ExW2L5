@@ -8,7 +8,7 @@ public class Libro extends Pubblicazione {
     private String author;
     private String genre;
 
-    public Libro(long isbn, String title, int year, short pages, String author, String genre) {
+    public Libro(long isbn, String title, int year, short pages, String author, String genre) throws Exception {
         super(isbn, title, year, pages);
         this.author = author;
         this.genre = genre;
@@ -42,7 +42,15 @@ public class Libro extends Pubblicazione {
         System.out.println(">> Inserisci il genere del libro");
         String genre = Main.scan.nextLine();
         System.out.println("Grazie, libro aggiunto alla biblioteca!");
-        return new Libro(isbn, title, year, pages, author, genre);
+        while (true) {
+            try {
+                return new Libro(isbn, title, year, pages, author, genre);
+            } catch (Exception e) {
+                e.printStackTrace();
+                System.out.println(">> Inserisci l'ISBN del libro");
+                isbn = Main.scan.nextLong();
+            }
+        }
     }
 
 }

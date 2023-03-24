@@ -7,7 +7,7 @@ import org.vm93.Main;
 public class Rivista extends Pubblicazione {
     private Periodic periods;
 
-    public Rivista(long isbn, String title, int year, short pages, Periodic periods) {
+    public Rivista(long isbn, String title, int year, short pages, Periodic periods) throws Exception {
         super(isbn, title, year, pages);
         this.periods = periods;
     }
@@ -23,7 +23,7 @@ public class Rivista extends Pubblicazione {
                 "}";
     }
 
-    public static Rivista newRivistaByScan() {
+    public static Rivista newRivistaByScan() throws Exception {
         System.out.println(">> Inserisci l'ISBN della rivista");
         long isbn = Main.scan.nextLong();
         Main.scan.nextLine();
@@ -56,6 +56,14 @@ public class Rivista extends Pubblicazione {
         } while (periodscan < 0 || periodscan > 3);
 
         System.out.println("Grazie, rivista aggiunta alla biblioteca!");
-        return new Rivista(isbn, title, year, pages, period);
+        while (true) {
+            try {
+                return new Rivista(isbn, title, year, pages, period);
+            } catch (Exception e) {
+                e.printStackTrace();
+                System.out.println(">> Inserisci l'ISBN del libro");
+                isbn = Main.scan.nextLong();
+            }
+        }
     }
 }
