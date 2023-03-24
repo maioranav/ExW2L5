@@ -18,8 +18,12 @@ public class Libro extends Pubblicazione {
     public String toString() {
         return "Libro{" +
                 "author='" + author + '\'' +
+                ", title='" + getTitle() + '\'' +
+                ", year='" + getYear() + '\'' +
                 ", genre='" + genre + '\'' +
-                "} " + super.toString();
+                ", pages='" + getPages() + '\'' +
+                ", isbn='" + getIsbn() + '\'' +
+                "}";
     }
 
     public static Libro newBookByScan() {

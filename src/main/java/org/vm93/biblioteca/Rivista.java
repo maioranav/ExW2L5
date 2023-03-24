@@ -15,8 +15,12 @@ public class Rivista extends Pubblicazione {
     @Override
     public String toString() {
         return "Rivista{" +
-                "periods=" + periods +
-                "} " + super.toString();
+                "title='" + getTitle() + '\'' +
+                ", periods='" + getPeriods() + '\'' +
+                ", year='" + getYear() + '\'' +
+                ", pages='" + getPages() + '\'' +
+                ", isbn='" + getIsbn() + '\'' +
+                "}";
     }
 
     public static Rivista newRivistaByScan() {
@@ -48,7 +52,7 @@ public class Rivista extends Pubblicazione {
             ;
         } while (periodscan < 0 || periodscan > 3);
 
-        System.out.println("Grazie, libro aggiunto alla biblioteca!");
+        System.out.println("Grazie, rivista aggiunta alla biblioteca!");
         return new Rivista(title, year, pages, period);
     }
 }
