@@ -8,8 +8,8 @@ public class Libro extends Pubblicazione {
     private String author;
     private String genre;
 
-    public Libro(String title, int year, short pages, String author, String genre) {
-        super(title, year, pages);
+    public Libro(long isbn, String title, int year, short pages, String author, String genre) {
+        super(isbn, title, year, pages);
         this.author = author;
         this.genre = genre;
     }
@@ -27,6 +27,9 @@ public class Libro extends Pubblicazione {
     }
 
     public static Libro newBookByScan() {
+        System.out.println(">> Inserisci l'ISBN del libro");
+        long isbn = Main.scan.nextLong();
+        Main.scan.nextLine();
         System.out.println(">> Inserisci titolo del libro");
         String title = Main.scan.nextLine();
         System.out.println(">> Inserisci anno di pubblicazione");
@@ -39,7 +42,7 @@ public class Libro extends Pubblicazione {
         System.out.println(">> Inserisci il genere del libro");
         String genre = Main.scan.nextLine();
         System.out.println("Grazie, libro aggiunto alla biblioteca!");
-        return new Libro(title, year, pages, author, genre);
+        return new Libro(isbn, title, year, pages, author, genre);
     }
 
 }

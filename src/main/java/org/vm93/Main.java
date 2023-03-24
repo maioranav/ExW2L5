@@ -8,6 +8,7 @@ import org.vm93.biblioteca.Rivista;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.IntStream;
 
 public class Main {
 
@@ -16,8 +17,8 @@ public class Main {
     private static List<Pubblicazione> libreria = new ArrayList<>();
 
     public static void main(String[] args) {
-        libreria.add(new Libro("Il passante", 2020, (short) 12, "Vincenzo", "Horror"));
-        libreria.add(new Rivista("Gesu è risorto", 2023, (short) 32, Periodic.SETTIMANALE));
+        libreria.add(new Libro((long) 125498515, "Il passante", 2020, (short) 12, "Vincenzo", "Horror"));
+        libreria.add(new Rivista((long) 1456196196, "Gesu è risorto", 2023, (short) 32, Periodic.SETTIMANALE));
         System.out.println(libreria.toString());
 
         System.out.println("\n** BIBLIOTECA DI VINCENZO **");
@@ -48,6 +49,17 @@ public class Main {
                         default -> {
                             System.out.println("Scelta non valida, riprova \n");
                         }
+                    }
+                }
+                case 2 -> {
+                    System.out.print("\n\t >> INSERISCI ISBN DA ELIMINARE: ");
+                    scan.nextLine();
+                    long isbn = scan.nextLong();
+                    Boolean match = libreria.stream().anyMatch(n -> n.getIsbn() == isbn);
+                    if (match) {
+                        System.out.println("\n\tElimino il risultato per l'ISBN inserito.");
+                    } else {
+                        System.out.println("\n\tNessuna corrispondenza soddisfa la ricerca.");
                     }
                 }
                 case 3 -> {

@@ -11,12 +11,12 @@ public class Pubblicazione {
     private int year;
     private short pages;
 
-    public Pubblicazione() {
-        this.isbn = (long) Math.floor(Math.random() * (999999999 - 111111111 + 1) + 111111111);
+    public Pubblicazione(long isbn) {
+        this.isbn = isbn;
     }
 
-    public Pubblicazione(String title, int year, short pages) {
-        this();
+    public Pubblicazione(long isbn, String title, int year, short pages) {
+        this(isbn);
         this.title = title;
         this.year = year;
         this.pages = pages;
