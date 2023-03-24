@@ -28,6 +28,7 @@ public class Main {
             System.out.println("\t 2 - RIMUOVI UN LIBRO TRAMITE IL SUO ISBN");
             System.out.println("\t 3 - RICERCA PER ANNO DI PUBBLICAZIONE");
             System.out.println("\t 4 - RICERCA PER AUTORE");
+            System.out.println("\t 5 - MOSTRA TUTTO");
             System.out.println("\t 0 - ESCI");
 
             switch (scan.nextInt()) {
@@ -36,6 +37,8 @@ public class Main {
                     switch (scan.nextInt()) {
                         case 1:
                             System.out.println("=> INSERIAMO UN LIBRO");
+                            scan.nextLine();
+                            libreria.add(Libro.newBookByScan());
                             continue;
                         case 2:
                             System.out.println("=> INSERIAMO UNA RIVISTA");
@@ -44,6 +47,10 @@ public class Main {
                             System.out.println("Scelta non valida, riprova \n");
                             continue;
                     }
+                case 5:
+                    System.out.println("\n\t >> MOSTRO TUTTI I LIBRI IN LIBRERIA");
+                    System.out.println(libreria.toString());
+                    break;
                 case 0:
                     System.out.println("\nQuesto programma è stato sviluppato da Vincenzo Maiorana");
                     System.out.println("\nPer ulteriori informazioni visita https://www.vincenzomaiorana.it");
